@@ -4,6 +4,7 @@ var barSchema = mongoose.Schema({
     name: String,
     username: String,
     tweet: String,
+    special: String,
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

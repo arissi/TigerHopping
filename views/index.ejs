@@ -1,29 +1,97 @@
-<% include ./partials/header %>
+<!DOCTYPE HTML>
+<html>
+<head >
+<meta charset=utf-8>
+<title>Tiger Hopping</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="" rel="stylesheet" type="text/css">
+<link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
-<div class="container">
-    
+<style>
+    { margin: 0; padding: 0; }
 
-    <% if (!currentUser) { %>
-        <h1>Welcome to TigerHopping!</h1>
-    <% } else { %>
-        <h1><%= currentUser.username %></h1>
-    <% } %>
-    
+    html {
+        background: url('images/background.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+</head>
+<div>
+    <h1 id = "title"> Tiger Hopping Tonight?</h1>
+    <small>
+      <img id="mike" src="images/mike.png" >
+      <p id = "under">Find out where Mike is going!!</P>
+    </small>
+</div>
 
-    <% bars.forEach(function (bar) { %>
-        <div>
-            <h2><%= bar.name %></h2>
-            <h3><%= bar.username %></h3>
-            <h3><%= bar.tweet %></h3>
-            <form method="POST" action='<%= bar._id %>/rsvp' class="inline">
-              <input type="hidden" name="extra_submit_param" value="extra_submit_value">
-              <button type="submit" name="submit_param" value="submit_value" class="link-button">
-                This is a link that sends a POST request
-              </button>
-            </form>
-        </div>
-    <% }) %>
+<div id = "body"><br />
+
+  <div id = "bars" background ="images/fredbanner.png">
+    <br />
+    <a href="https://www.facebook.com/bogiesbr/?rf=133405190045306" itemprop="url"><img id="fb" align = "left" src="images/facebook.gif"</a>
+    <a href="https://www.instagram.com/bogies_br/" itemprop="url"><img id="social" align = "left" src="images/IG.png" </a>
+    <a href="https://twitter.com/BogiesBR" itemprop="url"><img id="social" align = "left" src="images/twitter.png"</a><br />
+    <br />
+    <a href="http://www.bogiesbr.com/" itemprop="url"><img id="barimages" src="images/Bogie.jpg"</a><br />
+    <a href="tel:2257664241"><img src="images/contact.png" id = "phone"/></a>
+  </div><br />
+
+  <div id = "bars">
+    <br />
+    <a href="https://www.facebook.com/The-House-118013151586468/" itemprop="url"><img id="fb" align = "left" src="images/facebook.gif"</a>
+    <a href="https://www.instagram.com/houseintigerland/" itemprop="url"><img id="social" align = "left" src="images/IG.png" </a>
+    <a href="https://twitter.com/TigerlandHouse" itemprop="url"><img id="social" align = "left" src="images/twitter.png"</a><br />
+    <br />
+    <a href="https://www.facebook.com/The-House-118013151586468/" itemprop="url"><img id="barimages" src="images/The House.jpg"</a><br />
+    <a href="tel:2253896162"><img src="images/contact.png" id = "phone"/></a>
+  </div><br />
+
+  <div id = "bars">
+    <br />
+    <a href="https://www.facebook.com/JLs-Place-92259608830/" itemprop="url"><img id="fb" align = "left" src="images/facebook.gif"</a>
+    <a href="https://www.instagram.com/jlsplacebr/" itemprop="url"><img id="social" align = "left" src="images/IG.png" </a>
+    <a href="https://twitter.com/JLsPlaceBR" itemprop="url"><img id="social" align = "left" src="images/twitter.png"</a><br />
+    <br />
+    <a href="https://www.facebook.com/JLs-Place-92259608830/" itemprop="url"><img id="barimages" src="images/JL's.jpg"</a><br />
+    <a href="tel:2257657557"><img src="images/contact.png" id = "phone"/></a>
+  </div><br />
+
+  <div id = "bars">
+    <br />
+    <a href="https://www.facebook.com/Mikes-Daiquiris-Grill-126797682836/" itemprop="url"><img id="fb" align = "left" src="images/facebook.gif"</a>
+    <a href="https://www.instagram.com/mikesintigerland/" itemprop="url"><img id="social" align = "left" src="images/IG.png" </a>
+    <a href="https://twitter.com/MikesNTigerland" itemprop="url"><img id="social" align = "left" src="images/twitter.png"</a><br />
+    <br />
+    <a href="https://twitter.com/MikesNTigerland" itemprop="url"><img id="barimages" src="images/Mike's.jpg"</a><br />
+    <a href="tel:2254482524"><img src="images/contact.png" id = "phone"/></a>
+  </div><br />
+
+  <div id = "bars">
+    <br />
+    <a href="https://www.facebook.com/ReggiesBR/?rf=154414251274452" itemprop="url"><img id="fb" align = "left" src="images/facebook.gif"</a>
+    <a href="https://www.instagram.com/reggiesbr/" itemprop="url"><img id="social" align = "left" src="images/IG.png" </a>
+    <a href="https://twitter.com/ReggiesBR" itemprop="url"><img id="social" align = "left" src="images/twitter.png"</a><br />
+    <br />
+    <a href="http://reggiesbr.com/" itemprop="url"><img id="barimages" src="images/Reggie's.jpg"</a><br />
+    <a href="tel:2257579555"><img src="images/contact.png" id = "phone"/></a>
+  </div><br />
+
+  <div id = "bars">
+    <br />
+    <a href="https://www.facebook.com/Fredsbar/" itemprop="url"><img id="fb" align = "left" src="images/facebook.gif"</a>
+    <a href="https://www.instagram.com/fredsbar/" itemprop="url"><img id="social" align = "left" src="images/IG.png" </a>
+    <a href="https://twitter.com/fredsbar" itemprop="url"><img id="social" align = "left" src="images/twitter.png"</a><br />
+    <br />
+    <a href="http://www.fredsintigerland.com/" itemprop="url"><img id="barimages" src="images/Fred's.png"</a><br />
+    <a href="tel:2257663909"><img src="images/contact.png" id = "phone"/></a>
+  </div><br />
 
 </div>
 
-<% include ./partials/footer %>
+<body>
+
+</body>
+</html>
