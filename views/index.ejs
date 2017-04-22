@@ -1,146 +1,48 @@
 <% include ./partials/header %>
 
+
 <div>
-    <h1 id = "title"> Tiger Hopping Tonight?</h1>
-    <small>
-      <img id="mike" src="../public/img/mike.png" >
-      <p id = "under">Find out where Mike is going!!</P>
-    </small>
+    <% if (!currentUser) { %>
+      <h1 id = "title"> Tiger Hopping Tonight?</h1>
+    <% } else { %>
+      <h1 id = "title"> Tiger Hopping Tonight <%= currentUser.username %>?</h1>
+    <% } %>
+      <small>
+        <img id="mike" src="img/mike.png" >
+        <p id = "under">Find out where Mike is going!!</P>
+      </small>
 </div>
 
 <div id = "body"><br />
 
-  <div id = "bars" background ="../public/img/fredbanner.png">
-    <div class="bar-row">
-      <div class="bar-media">
-        <br />
-        <a href="https://www.facebook.com/bogiesbr/?rf=133405190045306" itemprop="url"><img id="fb" align = "left" src="../public/img/facebook.gif"</a>
-        <a href="https://www.instagram.com/bogies_br/" itemprop="url"><img id="social" align = "left" src="../public/img/IG.png" </a>
-        <a href="https://twitter.com/BogiesBR" itemprop="url"><img id="social" align = "left" src="../public/img/twitter.png"</a><br />
-        <br />
-        <a href="http://www.bogiesbr.com/" itemprop="url"><img id="barimages" src="../public/img/Bogie.jpg"</a><br />
-        <a href="tel:2257664241"><img src="../public/img/contact.png" id = "phone"/></a>
+  <% bars.forEach(function (bar) { %>
+    <div id = "bars">
+      <div class="bar-row">
+        <div class="bar-media">
+          <br />
+          <a href="<%= bar.facebook %>" itemprop="url"><img id="fb" align = "left" src="img/facebook.gif"</a>
+          <a href="<%= bar.instagram %>" itemprop="url"><img id="social" align = "left" src="img/IG.png" </a>
+          <a href="<%= bar.twitter %>" itemprop="url"><img id="social" align = "left" src="img/twitter.png"</a><br />
+          <br />
+          <a href="<%= bar.website %>" itemprop="url"><img id="barimages" src="<%= bar.image %>"</a><br />
+          <a href="<%= bar.telephone %>"><img src="img/contact.png" id = "phone"/></a>
+        </div>
+        <div class="bar-status">
+          <p class="tweet">Last Tweet: <%= bar.tweet %></p>
+          <p class="special">Today's Special: <%= bar.special %></p>
+        </div>
+        <div class="bar-vote">
+          <form method="POST" action='<%= bar._id %>/rsvp' class="">
+            <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+              <button type="submit" name="submit_param" value="submit_value" class="user-vote"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> I'm Going!</button>
+            <div class="vote-count">
+              <p class='count'> <%= bar.rsvps.length %></p> Tigers Going
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="bar-status">
-        <p class="tweet">Last Tweet: </p>
-        <p class="special">Today's Special: </p>
-      </div>
-      <div class="bar-vote">
-        <p class="user-vote"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> I'm Going!</p>
-        <div class="vote-count"><p class='count'>0</p> Tigers Going</div>
-      </div>
-    </div>
-  </div><br />
-
-  <div id = "bars">
-    <div class="bar-row">
-      <div class="bar-media">
-        <br />
-        <a href="https://www.facebook.com/The-House-118013151586468/" itemprop="url"><img id="fb" align = "left" src="../public/img/facebook.gif"</a>
-        <a href="https://www.instagram.com/houseintigerland/" itemprop="url"><img id="social" align = "left" src="../public/img/IG.png" </a>
-        <a href="https://twitter.com/TigerlandHouse" itemprop="url"><img id="social" align = "left" src="../public/img/twitter.png"</a><br />
-        <br />
-        <a href="https://www.facebook.com/The-House-118013151586468/" itemprop="url"><img id="barimages" src="../public/img/The House.jpg"</a><br />
-        <a href="tel:2253896162"><img src="../public/img/contact.png" id = "phone"/></a>
-      </div>
-      <div class="bar-status">
-        <p class="tweet">Last Tweet: </p>
-        <p class="special">Today's Special: </p>
-      </div>
-      <div class="bar-vote">
-        <p class="user-vote"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> I'm Going!</p>
-        <div class="vote-count"><p class='count'>0</p> Tigers Going</div>
-      </div>
-    </div>
-  </div><br />
-
-  <div id = "bars">
-    <div class="bar-row">
-      <div class="bar-media">
-        <br />
-        <a href="https://www.facebook.com/JLs-Place-92259608830/" itemprop="url"><img id="fb" align = "left" src="../public/img/facebook.gif"</a>
-        <a href="https://www.instagram.com/jlsplacebr/" itemprop="url"><img id="social" align = "left" src="../public/img/IG.png" </a>
-        <a href="https://twitter.com/JLsPlaceBR" itemprop="url"><img id="social" align = "left" src="../public/img/twitter.png"</a><br />
-        <br />
-        <a href="https://www.facebook.com/JLs-Place-92259608830/" itemprop="url"><img id="barimages" src="../public/img/JL's.jpg"</a><br />
-        <a href="tel:2257657557"><img src="../public/img/contact.png" id = "phone"/></a>
-      </div>
-      <div class="bar-status">
-        <p class="tweet">Last Tweet: </p>
-        <p class="special">Today's Special: </p>
-      </div>
-      <div class="bar-vote">
-        <p class="user-vote"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> I'm Going!</p>
-        <div class="vote-count"><p class='count'>0</p> Tigers Going</div>
-      </div>
-    </div>
-  </div><br />
-
-  <div id = "bars">
-    <div class="bar-row">
-      <div class="bar-media">
-        <br />
-        <a href="https://www.facebook.com/Mikes-Daiquiris-Grill-126797682836/" itemprop="url"><img id="fb" align = "left" src="../public/img/facebook.gif"</a>
-        <a href="https://www.instagram.com/mikesintigerland/" itemprop="url"><img id="social" align = "left" src="../public/img/IG.png" </a>
-        <a href="https://twitter.com/MikesNTigerland" itemprop="url"><img id="social" align = "left" src="../public/img/twitter.png"</a><br />
-        <br />
-        <a href="https://twitter.com/MikesNTigerland" itemprop="url"><img id="barimages" src="../public/img/Mike's.jpg"</a><br />
-        <a href="tel:2254482524"><img src="../public/img/contact.png" id = "phone"/></a>
-      </div>
-      <div class="bar-status">
-        <p class="tweet">Last Tweet: </p>
-        <p class="special">Today's Special: </p>
-      </div>
-      <div class="bar-vote">
-        <p class="user-vote"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> I'm Going!</p>
-        <div class="vote-count"><p class='count'>0</p> Tigers Going</div>
-      </div>
-    </div>
-  </div><br />
-
-  <div id = "bars">
-    <div class="bar-row">
-      <div class="bar-media">
-        <br />
-        <a href="https://www.facebook.com/ReggiesBR/?rf=154414251274452" itemprop="url"><img id="fb" align = "left" src="../public/img/facebook.gif"</a>
-        <a href="https://www.instagram.com/reggiesbr/" itemprop="url"><img id="social" align = "left" src="../public/img/IG.png" </a>
-        <a href="https://twitter.com/ReggiesBR" itemprop="url"><img id="social" align = "left" src="../public/img/twitter.png"</a><br />
-        <br />
-        <a href="http://reggiesbr.com/" itemprop="url"><img id="barimages" src="../public/img/Reggie's.jpg"</a><br />
-        <a href="tel:2257579555"><img src="../public/img/contact.png" id = "phone"/></a>
-      </div>
-      <div class="bar-status">
-        <p class="tweet">Last Tweet: </p>
-        <p class="special">Today's Special: </p>
-      </div>
-      <div class="bar-vote">
-        <p class="user-vote"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> I'm Going!</p>
-        <div class="vote-count"><p class='count'>0</p> Tigers Going</div>
-      </div>
-    </div>
-  </div><br />
-
-  <div id = "bars">
-    <div class="bar-row">
-      <div class="bar-media">
-        <br />
-        <a href="https://www.facebook.com/Fredsbar/" itemprop="url"><img id="fb" align = "left" src="../public/img/facebook.gif"</a>
-        <a href="https://www.instagram.com/fredsbar/" itemprop="url"><img id="social" align = "left" src="../public/img/IG.png" </a>
-        <a href="https://twitter.com/fredsbar" itemprop="url"><img id="social" align = "left" src="../public/img/twitter.png"</a><br />
-        <br />
-        <a href="http://www.fredsintigerland.com/" itemprop="url"><img id="barimages" src="../public/img/Fred's.png"</a><br />
-        <a href="tel:2257663909"><img src="../public/img/contact.png" id = "phone"/></a>
-      </div>
-      <div class="bar-status">
-        <p class="tweet">Last Tweet: </p>
-        <p class="special">Today's Special: </p>
-      </div>
-      <div class="bar-vote">
-        <p class="user-vote"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> I'm Going!</p>
-        <div class="vote-count"><p class='count'>0</p> Tigers Going</div>
-      </div>
-    </div>
-  </div><br />
+    </div><br />
+    <% }) %>
 
 </div>
 
