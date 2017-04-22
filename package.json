@@ -1,7 +1,7 @@
 {
-  "name": "yelp_camp",
+  "name": "tiger_hopping",
   "version": "1.0.0",
-  "description": "review site",
+  "description": "nightlige app",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
