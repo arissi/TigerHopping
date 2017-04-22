@@ -21,3 +21,12 @@ I built this Nightlife Tracker application as a project for students in my local
 ### Notes
 * This app communicates with the Tigerland Web Scraper to scrape information from the bars websites and update the twitter status
 
+### TODO
+* User should onle be able to RSVP once
+* RSVP count should reset every 24hrs
+* Make fonts look better
+
+### Deployed
+
+The app is deployed [here](https://tigerhopping.herokuapp.com/) at Heroku (also using [MongoLab](http://mlab.com)).
+
