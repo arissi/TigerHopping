@@ -5,7 +5,7 @@
     <% if (!currentUser) { %>
       <h1 id = "title"> Tiger Hopping Tonight?</h1>
     <% } else { %>
-      <h1 id = "title"> Tiger Hopping Tonight <%= currentUser.username %>?</h1>
+      <h1 id = "title"> Tiger Hopping Tonight <%= currentUser.twitter.username %>?</h1>
     <% } %>
       <small>
         <img id="mike" src="img/mike.png" >
