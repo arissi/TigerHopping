@@ -10,6 +10,10 @@ I built this Nightlife Tracker application as a project for students in my local
 * As an unauthenticated user, I can view current deals/event happening in the tigerland area.
 * As an authenticated user, I can add myself to a bar to indicate I am going there tonight.
 
+### Object-oriented modeling
+
+* [Analysis Model](https://github.com/arissi/TigerHopping/blob/master/AnalysisModel.pdf)
+* [Design Model](https://github.com/arissi/TigerHopping/blob/master/Design%20Model%20.pdf) 
 
 ### Built using:
 
