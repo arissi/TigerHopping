@@ -10,7 +10,7 @@ app.get("/", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("index", {bars: foundBars});
+            res.render("index", {bars: foundBars, currentUser: req.user});
         }
     });
 });
