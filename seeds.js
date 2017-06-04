@@ -62,6 +62,18 @@ var data = [
         phone: 'tel:2257657557',
         image: "img/JL's.jpg",
         website: 'https://www.facebook.com/JLs-Place-92259608830/'
+    },
+    {
+        name: 'Barcadia',
+        username: 'barcadiabr',
+        tweet: 'this is a tweet',
+        special: 'this is a special',
+        facebook: 'https://www.facebook.com/BarcadiaBatonRouge/',
+        instagram: 'https://www.instagram.com/barcadiabr/?hl=en',
+        twitter: 'https://twitter.com/barcadiabr',
+        phone: '2252246000',
+        image: "img/barcadia.png",
+        website: 'http://barcadiabars.com/barcadia-baton-rouge/'
     }
 ];
 
