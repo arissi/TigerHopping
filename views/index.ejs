@@ -46,7 +46,9 @@
                     </div>
                     <div class="row">
                         <h3 class="col-sm-4"><%= bar.rsvps.length %> Tigers Going</h3>
-                        <p class="col-sm-8 small tweet-body">twitter username </p>
+                    <% bar.rsvps.forEach(function (rsvp) { %>
+                        <p class="col-sm-8 small tweet-body"><%= rsvp.author.username %>, </p>
+                    <% }) %>
                     </div>
                 </div>
             </div>
