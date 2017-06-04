@@ -47,8 +47,10 @@
                     <div class="row">
                         <h3 class="col-sm-4"><%= bar.rsvps.length %> Tigers Going</h3>
                     <% bar.rsvps.forEach(function (rsvp) { %>
-                        <p class="col-sm-8 small tweet-body"><%= if(rsvp.author.username) rsvp.author.username %>, </p>
-                    <% }) %>
+                        <p class="col-sm-8 small tweet-body">
+                        <% if(rsvp.author.username) %> </p>
+                            <%= rsvp.author.username %>,
+                        <% }) %>
                     </div>
                 </div>
             </div>
