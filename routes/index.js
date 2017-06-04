@@ -33,7 +33,7 @@ app.post("/:id/rsvp", middleware.isLoggedIn, function(req, res) {
                     console.log(err);
                 } else {
                     rsvp.author.id = req.user._id;
-                    rsvp.author.username = req.currentUser.twitter.username;
+                    rsvp.author.username = req.user.twitter.username;
                     rsvp.save();
                     foundBar.rsvps.push(rsvp);
                     foundBar.save();
