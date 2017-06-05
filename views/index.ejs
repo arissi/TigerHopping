@@ -47,9 +47,12 @@
                     <div class="row">
                         <h3 class="col-sm-4"><%= bar.rsvps.length %> Tigers Going</h3>
                         <p class="col-sm-8 small tweet-body">
+                    
+                    <% var usernames = [] %>
                     <% bar.rsvps.forEach(function (rsvp) { %>
-                        @<%= rsvp.author.username %> 
+                        <% usernames.push('@' + rsvp.author.username) %> 
                     <% }) %>
+                        <%= usernames.join(", ") %> 
                         </p>
                     </div>
                 </div>
@@ -76,12 +79,19 @@
                 </div>
             </footer>
 
-            <div class="row">
-                <form method="POST" action='<%= bar._id %>/rsvp'>
-                    <input type="hidden" name="extra_submit_param" value="extra_submit_value">
-                    <button type="submit" name="submit_param" value="submit_value" class="col-sm-2 col-sm-offset-5 btn btn-default user-vote"><i class="fa fa-beer"></i> Going Tonight?</button>
-                </form>
-            </div>
+                <div class="row">
+            <% if (!currentUser){ %>
+                    <form action='auth/twitter'>
+                        <input type="submit" value='Log In' class="col-sm-2 col-sm-offset-5 btn btn-default user-vote"></input>
+                    </form>
+            <% } else if (currentUser && !usernames.includes(currentUser.twitter.username)) { %>
+                    <form method="POST" action='<%= bar._id %>/rsvp'>
+                        <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+                        <button type="submit" name="submit_param" value="submit_value" class="col-sm-2 col-sm-offset-5 btn btn-default user-vote"><i class="fa fa-beer"></i> Going Tonight?</button>
+                    </form>
+            <% } else { %>
+            <% } %>
+                </div>
         </div>
     </div>
   </div>
