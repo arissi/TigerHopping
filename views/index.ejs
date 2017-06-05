@@ -84,7 +84,7 @@
                     <form action='auth/twitter'>
                         <input type="submit" value='Log In' class="col-sm-2 col-sm-offset-5 btn btn-default user-vote"></input>
                     </form>
-            <% } else if (currentUser && !usernames.includes(currentUser.twitter.username)) { %>
+            <% } else if (currentUser && !usernames.includes('@' + currentUser.twitter.username)) { %>
                     <form method="POST" action='<%= bar._id %>/rsvp'>
                         <input type="hidden" name="extra_submit_param" value="extra_submit_value">
                         <button type="submit" name="submit_param" value="submit_value" class="col-sm-2 col-sm-offset-5 btn btn-default user-vote"><i class="fa fa-beer"></i> Going Tonight?</button>
