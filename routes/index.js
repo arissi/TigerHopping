@@ -6,7 +6,7 @@ module.exports = function(app, passport) {
 
 // INDEX - show all bars
 app.get("/", function(req, res) {
-    Bar.find({}, function(err, foundBars) {
+    Bar.find({}).populate("rsvps").exec(function(err, foundBars) {
         if (err) {
             console.log(err);
         } else {
@@ -44,6 +44,7 @@ app.post("/:id/rsvp", middleware.isLoggedIn, function(req, res) {
         }
     });
 });
+
 
 // Twitter authentication routes
 app.get('/auth/twitter', passport.authenticate('twitter'));
