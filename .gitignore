@@ -1,3 +1,6 @@
 /node_modules
 env/
 __pycache__
+config/
+twitterconfig/
+Procfile
