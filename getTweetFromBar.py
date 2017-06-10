@@ -1,7 +1,7 @@
 #use command line to retrieve tweets
 from sys import argv 
 from api import getAPI
-from twitter-config.database import configDB
+from twitterconfig.database import configDB
 import pymongo
 from pymongo import MongoClient
 import re
@@ -9,12 +9,12 @@ from datetime import datetime
 from pytz import timezone
 import json
 import os
-from bar-lib.scrapeReggiesBR import scrapeReggiesBR
-from bar-lib.scrapeMikesNTigerland import scrapeMikesNTigerland
-from bar-lib.scrapeBogiesBR import scrapeBogiesBR
-from bar-lib.scrapeFredsbar import scrapeFredsbar
-from bar-lib.scrapeJLsPlaceBR import scrapeJLsPlaceBR
-from bar-lib.scrapebarcadiabr import scrapebarcadiabr
+from barlib.scrapeReggiesBR import scrapeReggiesBR
+from barlib.scrapeMikesNTigerland import scrapeMikesNTigerland
+from barlib.scrapeBogiesBR import scrapeBogiesBR
+from barlib.scrapeFredsbar import scrapeFredsbar
+from barlib.scrapeJLsPlaceBR import scrapeJLsPlaceBR
+from barlib.scrapebarcadiabr import scrapebarcadiabr
 
 DB_NAME, DB_HOST, DB_PORT, DB_USER, DB_PASS = configDB()
 
