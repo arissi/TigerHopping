@@ -42,7 +42,6 @@ def main():
         today = datetime.today().strftime('%Y-%m-%d')
         central = timezone('US/Central')
         central_time = datetime.now(central)
-        print central_time.strftime('%H')
 
         # store the special from the web scraper
         scrapeFunction = functionMapping[arg]
@@ -53,7 +52,6 @@ def main():
         else:
             todaysSpecial = 'NONE'
         
-        
         # make tweet better
         tweet = api.user_timeline(screen_name=arg, count=1)[0].text
         tweet = cleanTweet(tweet)
@@ -63,7 +61,8 @@ def main():
         rsvps = db.rsvps
         bar = bars.find_one({ 'username' : arg })
         if bar is not None:
-            if central_time.strftime('%H') == 6:
+            # use specials to check if day has changed
+            if todaysSpecial != bar['special']:
                 rsvps.remove({})
                 bar['rsvps'] = []
             bar['tweet'] = tweet
