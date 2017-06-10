@@ -234,6 +234,7 @@ footer .footer-col {
 footer .footer-below {
   padding: 25px 0;
   background-color:#4f4f4f;
+  color: white
 }
 .btn-outline {
   color: #4f2a84;
@@ -299,6 +300,13 @@ footer .footer-below {
   border: 30px solid #fffba8;
   max-height: 460px;
   max-width: 460px;
+}
+.portfolio-modal .tigers-going {
+  background: #fffba8;
+  color: #4f2a84;
+}
+.portfolio-modal .tigers-going:before {
+  content: "\200b";
 }
 .portfolio-modal .modal-content .item-details {
   margin: 15px 0;
