@@ -1,6 +1,8 @@
 
 # TigerHopping Nightlife Tracker
 
+![TigerHopping](http://i.imgur.com/YZYPl94.png)
+
 I built this Nightlife Tracker application as a project for students in my local college. You can easily view the most up to date deals/events being offered by these bars and then indicate where you intend to go based off the information. Users must authenticate themselves through twitter to use the app's RSVP functionality.
 
 ### User stories:
